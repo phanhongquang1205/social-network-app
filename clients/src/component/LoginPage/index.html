@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/clients/src/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/clients/src/component/LoginPage/index.css">
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="row">
+            <div class="main-left">
+                <div class="logo pad">QMBook</div>
+                <div class="content pad">
+                    <h3>Đăng nhập gần đây</h3>
+                    <p>Nhấp vào ảnh của bạn hoặc thêm tài khoản.</p>
+                </div>
+                <div class="acount">
+                    <div class="acount-close"><i class="fas fa-times"></i></div>
+                    <div class="acountcard">
+                        <div class="acountcard-img" id="acountcard-img" style="background-image: url('https://file1.dangcongsan.vn/data/0/images/2020/12/17/vietha/baovechomeo-tb1.jpg?dpi=150&quality=100&w=680');">
+                        </div>
+                        <div class="acountcard-body">
+                            Quang
+                        </div>
+                    </div>
+                    <div class="acountcard" class="acountcard-img">
+                        <div class="acountcard-img">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="acountcard-body">
+                            <p>Thêm tài khoản</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="main-right">
+                <div class="form-login">
+                        <input type="email" class="form-control" id="emailInput" placeholder="Email">
+                        <input type="password" class="form-control" id="passwordInput" placeholder="Mật khẩu">
+                        <button type="button" class="btn btn-success" id="loginButton">Đăng nhập</button>
+                </div>
+                <div class="forget-pswd">
+                    <a href="">Quên mật khẩu</a>
+                </div>
+                <div class="create-acount">
+                    <a href="" class="btn btn-success" id="signupButton">Tạo tài khoản mới</a>
+                </div>
+                <div class="list-user">
+                    <button  type="button" class="btn btn-success" id="getUserButton">Lấy danh sách user</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+
+    </div>
+    
+<script src="/clients/src/libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/bf6a343cfa.js" crossorigin="anonymous"></script>
+<script src="/clients/src/libs/jquery/jquery-3.5.1.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#loginButton').click(function(){
+            const email = $('#emailInput').val();
+            const password = $('#passwordInput').val();
+            if(email.length==0){
+                $('.alert').remove()
+                $('body').prepend('<div class="alert alert-danger" role="alert">Bạn chưa nhập email</div>')
+                return
+            }
+            if(password.length==0){
+                $('.alert').remove()
+                $('body').prepend('<div class="alert alert-danger" role="alert">Bạn chưa nhập password</div>')
+                return
+            }
+            if(!email){
+                $('.alert').remove()
+                $('body').prepend('<div class="alert alert-warning" role="alert">Email không đúng</div>')
+                return
+            }
+            if(!password){
+                $('.alert').remove()
+                $('body').prepend('<div class="alert alert-warning" role="alert">Password không đúng</div>')
+                return
+            }
+
+        $.ajax({
+            url: "https://localhost:3000/login",
+            data: JSON.stringify({
+                email,
+                password
+            }),
+            type: 'POST',
+            contentType: 'application/json'
+        }).done(function(data){
+            if(data.status === 'error'){
+                $('.alert').remove()
+                $('body').prepend(`<div class="alert alert-warning" role="alert">${data.message}</div>`)
+            }else{
+                window.location.replace('http://127.0.0.1:5500/clients/src/component/HomePage/index.html')
+            }
+        })
+    })
+})
+</script>
+</body>
+
+</html>
