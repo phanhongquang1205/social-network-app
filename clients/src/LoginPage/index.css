@@ -1,0 +1,205 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100%;
+    /* height: 100vh; */
+    font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+    overflow-y: scroll;
+}
+.row{
+    width: 980px;
+    height: 496px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.main-left{
+    box-sizing: border-box;
+    padding: 0;
+    width: 60%;
+    padding-right: 5%;
+}
+.main-right{
+    padding: 0;
+    width:392px;
+}
+.main{
+    background: #f0f2f5;
+    width: 100%;
+    height: 74% auto;
+    padding: 92px 0 132px 0;
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+.acount{
+    width: 110%;
+}
+.main-left .logo{
+    color:#1877f2;
+    font-weight: 1000;
+    font-size: 30px;
+}
+.content p{
+    color: #606770;
+    font-size: 15px;
+    padding: 0;
+}
+
+.pad{
+    padding-bottom: 12px;
+}
+.footer{
+    box-sizing: border-box;
+    background-color: #fff;
+    width: 100%;
+    height: 26% auto;
+    padding-top: 20px;
+}
+.acount{
+    display: flex;
+    flex-wrap: wrap;
+    height: 440px;  
+    /* box-sizing: border-box; */
+    /* overflow-y: scroll;                    set scroll*/           
+}
+.acountcard{
+    /* display: flex;
+    justify-content: space-between; */
+    align-items: center;
+    margin-right: 20px;
+    width: 160px;
+    height: 206px;
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px #dddfe2;
+    display: block;
+    transition: all .2s ease-out;
+}
+.acountcard-img{
+    width:100%;
+    height: 160px;
+    overflow: hidden;
+    background-color: #f5f6f7;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    /* background-image: url(https://file1.dangcongsan.vn/data/0/images/2020/12/17/vietha/baovechomeo-tb1.jpg?dpi=150&quality=100&w=680); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.acount-add{
+    width: 100%;
+    height: 160px;
+    /* overflow: hidden; */
+    background: #f0f2f5;
+}
+.acountcard-body{
+    width:100%;
+    height: 46px;
+    padding:12px;
+    font-size: 18px;
+    line-height: 22px;
+    color: #4b4f56;
+    text-align:center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: #fff;
+}
+.acountcard:hover{
+    box-shadow: 0 0 10px 6px #dddfe2;
+}
+.acountcard-img i{
+    margin-left: 60px ;
+    margin-top: 60px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius:50%;
+    font-size: 23px;
+    color: white;
+    background-color:#1877f2;
+}
+.acountcard-body p{
+    color:#1877f2;
+}  
+.acount-close{
+    margin: 5px;
+    width: 12px;
+    height: 12px;
+    font-size: 12px;
+    position: absolute;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 12px;
+    animation: scale(1.3) 1s ease-out;
+}
+.main-right{
+    box-sizing: border-box;
+    margin-top: 40px;
+    padding: 10px 0 24px 0;
+    height: 345px;
+    background-color: #fff;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1),
+                0 8px 16px rgba(0, 0, 0, .1);
+    border-radius: 8px;
+}
+.form-login{
+    padding: 6px 15px 0 15px;
+    color: #4b4f56;
+    font-size:18px;
+}
+.form-login input{
+    height:50px;
+}
+.form-login input:not(:first-child){
+    margin: 12px 0
+}
+.form-login button{
+    height:50px;
+    width: 100%;
+    font-weight: 600;
+    font-size: 22px;
+    border: 0;
+    background-color: #1877f2;
+}
+.form-login button:hover{
+    background-color: #0e63d1;
+}
+.forget-pswd{
+    color: #1877f2;
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+    height: 55px;
+    text-align: center;
+    line-height: 55px;
+}
+.forget-pswd a{
+    text-decoration: none;
+}
+.forget-pswd a:hover{
+    color: #1877f2;
+    text-decoration: underline;
+}
+.create-acount{
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    border-top: #d9dde2 1px solid;
+    margin: 0 16px;
+}
+.create-acount a{
+    height: 46px;
+    line-height: 36px;
+    width: 180px;
+    font-weight: 600;
+    border: 0;
+    background-color: #42b72a;
+}
+.create-acount a:hover{
+    background-color: #3ca826;
+}
